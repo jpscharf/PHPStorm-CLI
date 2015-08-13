@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Get the path to PHPStorm
 PHP_STORM_APP=$(mdfind kind:application PHPStorm.app)
