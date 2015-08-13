@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+# ------------------------------------------------------------------
+# Open PHPStorm from the CLI.
+# ------------------------------------------------------------------
+
+# Configuration
+SCRIPT_NAME=$(basename $0)
+SCRIPT_VERSION="0.3.0"
 
 # Get the path to PHPStorm
 PHP_STORM_APP=$(mdfind kind:application PHPStorm.app)
