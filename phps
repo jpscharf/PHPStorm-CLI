@@ -18,7 +18,6 @@ fi
 
 # Get the path to PHPStorm
 PHP_STORM_APP=$(mdfind kind:application PHPStorm.app)
-
 BIN_SUB_PATH="/Contents/MacOS/phpstorm"
 
 # Check to see if PHPStorm was installed
@@ -30,12 +29,12 @@ fi
 PHP_STORM_BIN="$PHP_STORM_APP$BIN_SUB_PATH"
 
 # Convert relative paths
-if [[ "$1" == "." || -z "$1" ]]; then 
-    SOURCE_PATH="$(pwd)"
-elif [[ "$1" == ".." ]]; then
-    SOURCE_PATH="$(pwd)/.."
+if [[ "$PROJECT_PATH" == "." || -z "$PROJECT_PATH" ]]; then 
+    PROJECT_PATH="$(pwd)"
+elif [[ "$PROJECT_PATH" == ".." ]]; then
+    PROJECT_PATH="$(pwd)/.."
 else
-    SOURCE_PATH="$1"
+    PROJECT_PATH="$PROJECT_PATH"
 fi
 
 # Open PHPStorm passing parameters
