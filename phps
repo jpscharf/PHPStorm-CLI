@@ -38,6 +38,17 @@ else
 fi
 
 # Open PHPStorm passing parameters
+if [[ $VERBOSE -ne 1 ]]; then
+    echo "Opening PhpStorm..."
+else
+    echo "Opening PhpStorm:"
+    echo "  - Application Path:     $PHP_STORM_APP"
+    echo "  - Project Path:         $PROJECT_PATH"
+    if [[ -n "$LINE_NUMBER" && -n "$FILE_NAME" ]]; then
+        echo "  - Line Number:          $LINE_NUMBER"
+        echo "  - File:                 $FILE_NAME"
+    fi
+fi
 
 # Run Command
 if [[ -z "$LINE_NUMBER" || -z "$FILE_NAME" ]]; then
