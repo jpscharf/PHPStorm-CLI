@@ -14,9 +14,9 @@ fi
 PHP_STORM_BIN="$PHP_STORM_APP$BIN_SUB_PATH"
 
 # Convert relative paths
-if [ "$1" == "." ]; then 
+if [[ "$1" == "." || -z "$1" ]]; then 
     SOURCE_PATH="$(pwd)"
-elif [ "$1" == ".." ]; then
+elif [[ "$1" == ".." ]]; then
     SOURCE_PATH="$(pwd)/.."
 else
     SOURCE_PATH="$1"
