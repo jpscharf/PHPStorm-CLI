@@ -6,10 +6,12 @@
 # Configuration
 SCRIPT_NAME=$(basename $0)
 SCRIPT_VERSION="0.3.0"
+SCRIPT_FULL_PATH=$(readlink $0)
+SCRIPT_PATH=$(dirname "$SCRIPT_FULL_PATH")
 
 #
 # Load Modules
-source ./modules/*.module
+source "$SCRIPT_PATH"/modules/*.module
 
 __parse_arguments $*
 if [[ $? != 0 ]]; then

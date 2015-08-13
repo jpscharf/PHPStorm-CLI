@@ -2,7 +2,7 @@
 # Parse Arguments Module
 # ------------------------------------------------------------------
 
-source modules/usage.module
+source "$SCRIPT_PATH"/modules/usage.module
  
 function __parse_arguments() {
     while [ "$#" -gt 0 ]
