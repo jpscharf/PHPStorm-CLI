@@ -24,4 +24,4 @@ fi
 
 # Open PHPStorm passing parameters
 
-$("$PHP_STORM_BIN" "$SOURCE_PATH")
+$(nohup "$PHP_STORM_BIN" "$SOURCE_PATH" "$2" "$3"  > /dev/null 2>&1 &)
