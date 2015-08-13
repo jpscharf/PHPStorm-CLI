@@ -1,0 +1,23 @@
+# ------------------------------------------------------------------
+# Usage Module
+# ------------------------------------------------------------------
+ 
+function __usage() {
+    echo "Open PhpStorm from the CLI"
+    echo
+    echo "Usage: $SCRIPT_NAME <project path> [options] <file name>"
+    echo
+    echo "Options:"
+    echo
+    echo "  -h, --help"
+    echo "      This help text."
+    echo
+    echo "  -l, --line"
+    echo "       Number of the line, where the caret should rest"
+    echo
+    echo "  -v, --verbose"
+    echo "      Show details..."
+    echo
+    echo "  -V, --version"
+    echo "      Display version."
+}

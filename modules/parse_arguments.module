@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------
+# Parse Arguments Module
+# ------------------------------------------------------------------
+
+source modules/usage.module
+ 
+function __parse_arguments() {
+    while [ "$#" -gt 0 ]
+    do
+        case "$1" in
+            -h|--help)
+                __usage
+                return 1
+                ;;
+            -l|--line)
+                LINE_NUMBER=$2
+                FILE_NAME=$3
+                shift
+                shift
+                ;;
+            -v|--verbose)
+                VERBOSE=1
+                ;;
+            -V|--version)
+                echo "$SCRIPT_NAME v$SCRIPT_VERSION"
+                return 2
+                ;;
+            -*|--*)
+                echo "Invalid option '$1'. Use --help to see the valid options"
+                return 3
+                ;;
+            *)
+                PROJECT_PATH="$1"
+        esac
+        shift
+    done
+    return 0
+}
