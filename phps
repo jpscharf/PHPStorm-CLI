@@ -7,6 +7,15 @@
 SCRIPT_NAME=$(basename $0)
 SCRIPT_VERSION="0.3.0"
 
+#
+# Load Modules
+source ./modules/*.module
+
+__parse_arguments $*
+if [[ $? != 0 ]]; then
+    exit $?
+fi
+
 # Get the path to PHPStorm
 PHP_STORM_APP=$(mdfind kind:application PHPStorm.app)
 
