@@ -39,4 +39,10 @@ fi
 
 # Open PHPStorm passing parameters
 
-$(nohup "$PHP_STORM_BIN" "$SOURCE_PATH" "$2" "$3"  > /dev/null 2>&1 &)
+# Run Command
+if [[ -z "$LINE_NUMBER" || -z "$FILE_NAME" ]]; then
+    $(nohup "$PHP_STORM_BIN" "$PROJECT_PATH"  > /dev/null 2>&1 &)
+else
+    $(nohup "$PHP_STORM_BIN" "$PROJECT_PATH" "--line" "$LINE_NUMBER" "$PROJECT_PATH/$FILE_NAME"  > /dev/null 2>&1 &)
+fi
+exit 0
